@@ -5,10 +5,10 @@ import './App.css';
 export default function LandingPage() {
   const navigate = useNavigate();
   // TODO: Update this URL to your platform's subdomain
-  const platformUrl = 'http://localhost:5173';
+  const platformUrl = 'https://centragent.netlify.app';
 
   const handleLogin = () => {
-    window.location.href = `${platformUrl}/login`;
+    window.location.href = `${platformUrl}`;
   };
 
   const handleAccessRequest = () => {   
@@ -22,6 +22,9 @@ export default function LandingPage() {
           <i className="fa-solid fa-robot"></i>
           <span>centrAgent</span>
         </div>
+        <nav className="nav-links">
+          <button onClick={() => navigate('/pricing')} className="nav-link">Pricing</button>
+        </nav>
         <div className="auth-buttons">
           <button onClick={handleLogin} className="btn-secondary">
             Login
@@ -34,9 +37,12 @@ export default function LandingPage() {
 
       <main className="landing-content">
         <section className="hero">
-          <h1>Your Custom AI Agents, Powered by n8n</h1>
+          <h1>One chat platform for all your AI Agents</h1>
           <p className="hero-subtitle">
-            One unified chat platform for all your custom-made AI agents.
+            Build complex logic in n8n and instantly deploy it to a professional chat interface without writing a single line of frontend code. 
+          </p>
+          <p className='hero-subtitle'>
+            Share your agents with all your teammates to quickly deploy and utilize your fleet of chat-based AI agents.
           </p>
           <button onClick={handleAccessRequest} className="btn-hero">
             Get Started <i className="fa-solid fa-arrow-right"></i>
@@ -46,50 +52,60 @@ export default function LandingPage() {
         <section className="features">
           <div className="feature-card">
             <div className="feature-icon">
-              <i className="fa-solid fa-robot"></i>
-            </div>
-            <h3>Multi-Agent Management</h3>
-            <p>Manage the use of multiple AI agents, each powered by your own n8n workflows. Switch between agents instantly.</p>
-          </div>
-
-          <div className="feature-card">
-            <div className="feature-icon">
               <i className="fa-solid fa-comments"></i>
             </div>
-            <h3>Beautiful Chat Interface</h3>
-            <p>Enjoy a modern, responsive chat experience with session persistence and real-time messaging.</p>
+            <h3>Unified Chat Interface</h3>
+            <p>Rich text support with Markdown, tables, and code syntax highlighting. Automatically saves chat history.</p>
           </div>
 
           <div className="feature-card">
             <div className="feature-icon">
-              <i className="fa-solid fa-screwdriver-wrench"></i>
+              <i className="fa-solid fa-robot"></i>
             </div>
-            <h3>Tool Discovery</h3>
-            <p>Automatically fetch and display your agent's available tools and capabilities from n8n metadata webhooks.</p>
+            <h3>Agent Management</h3>
+            <p>Bring your own backend. Simply paste your n8n Webhook URLs to create an agent with dual-webhook architecture.</p>
+          </div>
+
+          <div className="feature-card">
+            <div className="feature-icon">
+              <i className="fa-solid fa-users"></i>
+            </div>
+            <h3>Team Collaboration</h3>
+            <p>Organize with team workspaces. Share agents with granular permissions and role-based access control.</p>
           </div>
 
           <div className="feature-card">
             <div className="feature-icon">
               <i className="fa-solid fa-shield-halved"></i>
             </div>
-            <h3>Secure & Private</h3>
-            <p>Your data stays safe with JWT authentication and built-in SSRF protection. No API keys needed.</p>
+            <h3>Security & Architecture</h3>
+            <p>Built-in SSRF protection, data isolation, and secure JWT-based authentication.</p>
           </div>
+        </section>
 
-          <div className="feature-card">
-            <div className="feature-icon">
-              <i className="fa-solid fa-plug"></i>
+        <section className="how-it-works">
+          <h2>How It Works</h2>
+          <div className="steps-grid">
+            <div className="step-card">
+              <div className="step-number">1</div>
+              <h3>Build in n8n</h3>
+              <p>Create a workflow in n8n (e.g., a customer support bot).</p>
             </div>
-            <h3>Easy Integration</h3>
-            <p>Simply provide your n8n webhook URLs. No complex setup or configuration required.</p>
-          </div>
-
-          <div className="feature-card">
-            <div className="feature-icon">
-              <i className="fa-solid fa-rocket"></i>
+            <div className="step-card">
+              <div className="step-number">2</div>
+              <h3>Connect</h3>
+              <p>Log in to CentrAgent, click "New Agent," and paste the n8n Webhook URL.</p>
             </div>
-            <h3>Fast & Responsive</h3>
-            <p>Built with React and modern web technologies for a smooth, lightning-fast experience.</p>
+            <div className="step-card">
+              <div className="step-number">3</div>
+              <h3>Interact</h3>
+              <p>Start chatting immediately. CentrAgent handles the UI, history, and formatting.</p>
+            </div>
+            <div className="step-card">
+              <div className="step-number">4</div>
+              <h3>Share</h3>
+              <p>Toggle permissions to let your team members chat with the same agent.</p>
+            </div>
           </div>
         </section>
 
@@ -102,7 +118,7 @@ export default function LandingPage() {
         </section>
         
         <footer className="landing-footer">
-            <p>&copy; {new Date().getFullYear()} n8n Chat. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} CentrAgent. All rights reserved.</p>
         </footer>
       </main>
     </div>

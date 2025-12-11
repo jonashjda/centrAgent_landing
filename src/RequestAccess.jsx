@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './App.css'; // Reusing the main CSS for consistency
 
 export default function RequestAccess() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const plan = location.state?.plan || 'team'; // Default to team (showing all fields) if not specified
+  const isPersonal = plan === 'personal';
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,6 +29,9 @@ export default function RequestAccess() {
     
     const myForm = e.target;
     const formData = new FormData(myForm);
+    
+    // Add plan type to submission
+    formData.append('plan', plan);
     
     fetch("/", {
       method: "POST",
@@ -53,7 +60,9 @@ export default function RequestAccess() {
         <div className="feature-card" style={{ maxWidth: '600px', width: '100%', padding: '2rem', textAlign: 'left' }}>
           {!submitted ? (
             <>
-              <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Request Access</h2>
+              <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>
+                {isPersonal ? 'Request Personal Access' : 'Request Team Access'}
+              </h2>
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <input type="hidden" name="form-name" value="request-access" />
                 <div>
@@ -70,7 +79,9 @@ export default function RequestAccess() {
                 </div>
                 
                 <div>
-                  <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem' }}>Work Email</label>
+                  <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem' }}>
+                    {isPersonal ? 'Email' : 'Work Email'}
+                  </label>
                   <input
                     type="email"
                     id="email"
@@ -82,18 +93,20 @@ export default function RequestAccess() {
                   />
                 </div>
 
-                <div>
-                  <label htmlFor="company" style={{ display: 'block', marginBottom: '0.5rem' }}>Company Name</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    required
-                    style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
-                  />
-                </div>
+                {!isPersonal && (
+                  <div>
+                    <label htmlFor="company" style={{ display: 'block', marginBottom: '0.5rem' }}>Company Name</label>
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      required
+                      style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid #ccc' }}
+                    />
+                  </div>
+                )}
 
                 <div>
                   <label htmlFor="reason" style={{ display: 'block', marginBottom: '0.5rem' }}>How do you plan to use n8n Chat?</label>
