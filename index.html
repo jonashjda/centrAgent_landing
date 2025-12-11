@@ -8,6 +8,13 @@
     <script src="https://kit.fontawesome.com/b454dd4318.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <!-- A little help for the Netlify post-processing bots -->
+    <form name="request-access" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="company" />
+      <textarea name="reason"></textarea>
+    </form>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

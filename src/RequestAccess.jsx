@@ -22,9 +22,17 @@ export default function RequestAccess() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
+    
+    const myForm = e.target;
+    const formData = new FormData(myForm);
+    
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setSubmitted(true))
+      .catch((error) => alert(error));
   };
 
   return (
@@ -32,7 +40,7 @@ export default function RequestAccess() {
       <header className="landing-header">
         <div className="logo" onClick={() => navigate('/')} style={{cursor: 'pointer'}}>
           <i className="fa-solid fa-robot"></i>
-          <span>n8n Chat</span>
+          <span>centrAgent</span>
         </div>
         <div className="auth-buttons">
           <button onClick={() => navigate('/')} className="btn-secondary">
@@ -46,7 +54,8 @@ export default function RequestAccess() {
           {!submitted ? (
             <>
               <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Request Access</h2>
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} netlify>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                <input type="hidden" name="form-name" value="request-access" />
                 <div>
                   <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem' }}>Full Name</label>
                   <input
