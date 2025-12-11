@@ -46,7 +46,7 @@ export default function RequestAccess() {
           {!submitted ? (
             <>
               <h2 style={{ marginBottom: '1.5rem', textAlign: 'center' }}>Request Access</h2>
-              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} netlify>
                 <div>
                   <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem' }}>Full Name</label>
                   <input
