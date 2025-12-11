@@ -346,6 +346,12 @@
   width: 100%;
 }
 
+.platform-img {
+  max-width: 80%;
+  border-radius: 5px;
+  box-shadow: white;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .landing-header {

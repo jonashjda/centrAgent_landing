@@ -83,7 +83,10 @@ export default function LandingPage() {
           </div>
         </section>
 
+
         <section className="how-it-works">
+          <img src="src\platformimg.png" alt="platform image" className='platform-img'/>
+
           <h2>How It Works</h2>
           <div className="steps-grid">
             <div className="step-card">
