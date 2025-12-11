@@ -11,7 +11,7 @@ export default function LandingPage() {
     window.location.href = `${platformUrl}/login`;
   };
 
-  const handleAccessRequest = () => {
+  const handleAccessRequest = () => {   
     navigate('/request-access');
   };
 
