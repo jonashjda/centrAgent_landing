@@ -50,8 +50,8 @@ export default function RequestAccess() {
           <span>centrAgent</span>
         </div>
         <div className="auth-buttons">
-          <button onClick={() => navigate('/')} className="btn-secondary">
-            Back to Home
+          <button onClick={() => navigate('/pricing')} className="btn-secondary">
+            Back
           </button>
         </div>
       </header>

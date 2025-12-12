@@ -32,8 +32,8 @@ export default function Pricing() {
           <button onClick={handleLogin} className="btn-secondary">
             Login
           </button>
-          <button onClick={() => handleAccessRequest('personal')} className="btn-primary">
-            Request Access
+          <button onClick={handleHome} className="btn-primary">
+            Back to home
           </button>
         </div>
       </header>

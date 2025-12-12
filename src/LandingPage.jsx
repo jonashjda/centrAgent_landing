@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './App.css';
+import platformImg from './platformimg.png';
 
 export default function LandingPage() {
   const navigate = useNavigate();
@@ -12,7 +13,7 @@ export default function LandingPage() {
   };
 
   const handleAccessRequest = () => {   
-    navigate('/request-access');
+    navigate('/pricing');
   };
 
   return (
@@ -23,7 +24,7 @@ export default function LandingPage() {
           <span>centrAgent</span>
         </div>
         <nav className="nav-links">
-          <button onClick={() => navigate('/pricing')} className="nav-link">Pricing</button>
+          <button onClick={handleAccessRequest} className="nav-link">Pricing</button>
         </nav>
         <div className="auth-buttons">
           <button onClick={handleLogin} className="btn-secondary">
@@ -85,7 +86,7 @@ export default function LandingPage() {
 
 
         <section className="how-it-works">
-          <img src="src\platformimg.png" alt="platform image" className='platform-img'/>
+          <img src={platformImg} alt="platform image" className='platform-img'/>
 
           <h2>How It Works</h2>
           <div className="steps-grid">
