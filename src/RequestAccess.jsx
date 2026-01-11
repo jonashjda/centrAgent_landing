@@ -109,7 +109,7 @@ export default function RequestAccess() {
                 )}
 
                 <div>
-                  <label htmlFor="reason" style={{ display: 'block', marginBottom: '0.5rem' }}>How do you plan to use n8n Chat?</label>
+                  <label htmlFor="reason" style={{ display: 'block', marginBottom: '0.5rem' }}>How do you plan to use centrAgent?</label>
                   <textarea
                     id="reason"
                     name="reason"

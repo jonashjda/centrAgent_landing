@@ -40,7 +40,7 @@ export default function LandingPage() {
         <section className="hero">
           <h1>One chat platform for all your AI Agents</h1>
           <p className="hero-subtitle">
-            Build complex logic in n8n and instantly deploy it to a professional chat interface without writing a single line of frontend code. 
+            Build complex logic in your favorite no-code platform and instantly deploy it to a professional chat interface without writing a single line of frontend code. 
           </p>
           <p className='hero-subtitle'>
             Share your agents with all your teammates to quickly deploy and utilize your fleet of chat-based AI agents.
@@ -56,7 +56,7 @@ export default function LandingPage() {
               <i className="fa-solid fa-comments"></i>
             </div>
             <h3>Unified Chat Interface</h3>
-            <p>Rich text support with Markdown, tables, and code syntax highlighting. Automatically saves chat history.</p>
+            <p>Handles the entire User Interface and message formatting. With user-based chat history.</p>
           </div>
 
           <div className="feature-card">
@@ -64,7 +64,7 @@ export default function LandingPage() {
               <i className="fa-solid fa-robot"></i>
             </div>
             <h3>Agent Management</h3>
-            <p>Bring your own backend. Simply paste your n8n Webhook URLs to create an agent with dual-webhook architecture.</p>
+            <p>Bring your own backend. Simply paste your workflow Webhook URLs to create an agent with dual-webhook architecture.</p>
           </div>
 
           <div className="feature-card">
@@ -80,7 +80,7 @@ export default function LandingPage() {
               <i className="fa-solid fa-shield-halved"></i>
             </div>
             <h3>Security & Architecture</h3>
-            <p>Built-in SSRF protection, data isolation, and secure JWT-based authentication.</p>
+            <p>Secure JWT-based authentication. Role-based access control includes webhook URLs and credentials.</p>
           </div>
         </section>
 
@@ -92,8 +92,8 @@ export default function LandingPage() {
           <div className="steps-grid">
             <div className="step-card">
               <div className="step-number">1</div>
-              <h3>Build in n8n</h3>
-              <p>Create a workflow in n8n (e.g., a customer support bot).</p>
+              <h3>Build Workflow</h3>
+              <p>Create a workflow (e.g., a customer support bot).</p>
             </div>
             <div className="step-card">
               <div className="step-number">2</div>
@@ -117,7 +117,7 @@ export default function LandingPage() {
           <h2>Ready to get started?</h2>
           <p>Create your account and start building your AI agent platform today.</p>
           <button onClick={handleAccessRequest} className="btn-hero">
-            Create Free Account <i className="fa-solid fa-arrow-right"></i>
+            Request Access <i className="fa-solid fa-arrow-right"></i>
           </button>
         </section>
         

@@ -4,10 +4,10 @@ import './App.css';
 
 export default function Pricing() {
   const navigate = useNavigate();
-  const platformUrl = 'http://localhost:5173';
+  const platformUrl = 'https://centragent.netlify.app';
 
   const handleLogin = () => {
-    window.location.href = `${platformUrl}/login`;
+    window.location.href = `${platformUrl}`;
   };
 
   const handleAccessRequest = (planType) => {   
